@@ -14,11 +14,11 @@ public class App {
      * 
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
-        URL url = new URL("http://192.168.178.87:8080/get?pressure");
+    public static void main(String[] args) throws IOException { //Aufruf der main Funktion
+        URL url = new URL("http://192.168.178.87:8080/get?pressure"); //festlegen einer URL
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        System.out.println("\nSending 'GET' request to URL : " + url);
+        System.out.println("\nSending 'GET' request to URL : " + url); //Ausgabe im Terminal
 
         Scanner reader = new Scanner(con.getInputStream());
         String inputLine="";
