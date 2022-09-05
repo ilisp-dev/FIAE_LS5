@@ -15,7 +15,7 @@ public class App {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException { //Aufruf der main Funktion
-        URL url = new URL("http://192.168.178.87:8080/get?pressure"); //festlegen einer URL
+        URL url = new URL("http://192.168.1.128/get?pressure"); //festlegen einer URL
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         System.out.println("\nSending 'GET' request to URL : " + url); //Ausgabe im Terminal
