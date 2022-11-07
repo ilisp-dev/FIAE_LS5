@@ -15,7 +15,7 @@ public class App {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException { //Aufruf der main Funktion
-        URL url = new URL("http://192.168.1.128/get?pressure"); //festlegen einer URL
+        URL url = new URL("http://192.168.1.236/get?pressure"); //festlegen einer URL
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         System.out.println("\nSending 'GET' request to URL : " + url); //Ausgabe im Terminal
@@ -29,6 +29,9 @@ public class App {
 
         System.out.println("HTTP Responce: "+inputLine);
         JSONObject obj = new JSONObject(inputLine);
-        System.out.println("Druck ist:"+obj.getJSONObject("buffer").getJSONObject("pressure").getJSONArray("buffer").getDouble(0)+" mBAR");    
+        System.out.println("Druck ist:"+obj.getJSONObject("buffer").getJSONObject("pressure").getJSONArray("buffer").getDouble(0)+" mBAR");   
+        
+        System.out.println("Update Mode ist:"+obj.getJSONObject("buffer").getJSONObject("pressure").getString("updateMode"));
+ 
     }
 }
